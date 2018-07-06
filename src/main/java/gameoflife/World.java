@@ -5,6 +5,7 @@ import java.util.Random;
 public class World {
 
 	private int[][] world;
+	private int generation = 0;
 
 	public World(int width, int length) {
 		world = new int[width][length];
@@ -56,9 +57,14 @@ public class World {
 			}
 		}
 		world = nextGen;
+		generation++;
+	}
+	
+	public int getGeneration() {
+	  return generation;
 	}
 
-	private int getWorldWidth() {
+	public int getWorldWidth() {
 		return world.length;
 	}
 
